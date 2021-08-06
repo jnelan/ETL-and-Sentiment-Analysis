@@ -25,10 +25,10 @@ cursor = sqlConnection.cursor()
 
 # For loop will iterate through csv file to store the data in the database
 for index,row in dataFrameWithJimmyTweets.iterrows():
-    cursor.execute("INSERT INTO [jimmyfallon]([created_at],[text],[url],[replies],[retweets],[favorites],[user]) VALUES (?,?,?,?,?,?,?)", row["created_at"], row["text"], row["url"], row["replies"], row["retweets"], row["favorites"], row["user"])
+    cursor.execute("INSERT INTO [jimmy]([created_at],[text],[url],[replies],[retweets],[favorites],[user]) VALUES (?,?,?,?,?,?,?)", row["created_at"], row["text"], row["url"], row["replies"], row["retweets"], row["favorites"], row["user"])
 
 for index,row in dataFrameWithStephenTweets.iterrows():
-    cursor.execute("INSERT INTO [StephenAtHome]([created_at],[text],[url],[replies],[retweets],[favorites],[user]) VALUES (?,?,?,?,?,?,?)", row["created_at"], row["text"], row["url"], row["replies"], row["retweets"], row["favorites"], row["user"])    
+    cursor.execute("INSERT INTO [Stephen]([created_at],[text],[url],[replies],[retweets],[favorites],[user]) VALUES (?,?,?,?,?,?,?)", row["created_at"], row["text"], row["url"], row["replies"], row["retweets"], row["favorites"], row["user"])    
 
 
 # This will committ it to the data base and then close the cursor and sql connection
